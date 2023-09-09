@@ -22,7 +22,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     withSonarQubeEnv(installationName: 'sonarcloud', credentialsId: 'sonar-token') { 
                         sh 'mvn sonar:sonar -Dsonar.projectKey=sonardemo1 -Dsonar.organization=soniaorg -Dsonar.host.url=https://sonarcloud.io'
-                        sh 'sleep 50'
+                        
                         
                     }
                 }    
